@@ -15,7 +15,7 @@ Flutter plugin for ijkplayer
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
 
-  s.static_framework = true
+  s.static_framework = false
 
   # @ uncomment next 3 lines to debug or use your custom ijkplayer build
   # 去除下面 3 行代码开头的注释 #，以便于进行调试或者使用自定义构建的 ijkplayer 产物
