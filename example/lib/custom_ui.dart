@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 /// https://fijkplayer.befovy.com/docs/zh/custom-ui.html#%E6%97%A0%E7%8A%B6%E6%80%81-ui-
 Widget simplestUI(
-    FijkPlayer player, BuildContext context, Size viewSize, Rect texturePos) {
+    FijkPlayer player, FijkData data, BuildContext context, Size viewSize, Rect texturePos) {
   Rect rect = Rect.fromLTRB(
       max(0.0, texturePos.left),
       max(0.0, texturePos.top),

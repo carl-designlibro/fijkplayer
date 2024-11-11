@@ -2,6 +2,7 @@ import 'package:fijkplayer/fijkplayer.dart';
 import 'package:flutter/material.dart';
 
 import 'app_bar.dart';
+import 'custom_ui.dart';
 // import 'custom_ui.dart';
 
 class VideoScreen extends StatefulWidget {
@@ -29,9 +30,12 @@ class _VideoScreenState extends State<VideoScreen> {
   void startPlay() async {
     await player.setOption(FijkOption.hostCategory, "request-screen-on", 1);
     await player.setOption(FijkOption.hostCategory, "request-audio-focus", 1);
-    await player.setDataSource(widget.url, autoPlay: true).catchError((e) {
+    await player.setDataSource(widget.url, autoPlay: false, showCover: true).catchError((e) {
       print("setDataSource error: $e");
     });
+    var duration = player.value.duration;
+    print("duration : $duration");
+    // await player.prepareAsync();
   }
 
   @override
@@ -42,10 +46,10 @@ class _VideoScreenState extends State<VideoScreen> {
         child: Center(
           child: FijkView(
             player: player,
-            panelBuilder: fijkPanel2Builder(snapShot: true),
             fsFit: FijkFit.fill,
+            panelBuilder: fijkPanel2Builder(snapShot: true),
             // panelBuilder: simplestUI,
-            // panelBuilder: (FijkPlayer player, BuildContext context,
+            // panelBuilder: (FijkPlayer player, FijkData data, BuildContext context,
             //     Size viewSize, Rect texturePos) {
             //   return CustomFijkPanel(
             //       player: player,
