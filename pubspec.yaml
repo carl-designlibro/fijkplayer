@@ -27,8 +27,9 @@ flutter:
       android:
         package: com.befovy.fijkplayer
         pluginClass: FijkPlugin
-      ios:
-        pluginClass: FijkPlugin
+#        临时解决和TUTK冲突
+#      ios:
+#        pluginClass: FijkPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
